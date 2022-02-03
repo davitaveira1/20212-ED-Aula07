@@ -70,6 +70,48 @@ public class controlaListaSimples {
         
     }
     
+    public void excluirNoFinalDaLista(){
+        
+        if(primeiro == null){
+            System.out.println("Lista vazia!!");
+        }else{
+            
+            if(contarNos()==1){
+                
+                primeiro = ultimo = null;
+                System.out.println("Nó foi excluído! Lista vazia!");
+                
+            }else{
+                
+                No aux=primeiro;
+                
+                while(aux.prox!=ultimo){
+                    aux = aux.prox;                    
+                }
+                
+                ultimo = aux;
+                ultimo.prox = null;
+                System.out.println("Nó foi excluído!");
+            }
+            
+        }
+        
+    }
+    
+    public int contarNos(){
+        
+        No aux=primeiro;
+        int cont=0;
+        
+        while(aux != null){
+            aux = aux.prox;
+            cont++;
+        }
+        
+        return cont;
+        
+    }    
+    
     
     
 }

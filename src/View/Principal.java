@@ -69,6 +69,26 @@ public class Principal {
 
     public static void excluir() {
         System.out.println("Você entrou no método Excluir.");
+        
+        No ultimoNo = controlaListaSimples.visualizarUltimoNoLista();
+
+        int resposta;
+
+        System.out.println("Último nó da lista (NOME/CPF): " + ultimoNo.nome + "/" + ultimoNo.cpf);
+        System.out.println("Deseja realmente EXCLUIR o último nó da lista ?");
+        System.out.println("0 - NÃO");
+        System.out.println("1 - SIM");
+        resposta = entrada.nextInt();
+
+        if (resposta == 1) {
+
+            controlaListaSimples.excluirNoFinalDaLista();            
+
+        }else{
+            System.out.println("O último nó não foi EXCLUIDO!!");
+        }        
+        
+        
     }
 
     public static void visualizar() {
